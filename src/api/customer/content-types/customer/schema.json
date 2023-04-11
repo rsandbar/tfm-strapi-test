@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "customers",
+  "info": {
+    "singularName": "customer",
+    "pluralName": "customers",
+    "displayName": "customer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string",
+      "maxLength": 30,
+      "minLength": 2
+    },
+    "lastName": {
+      "type": "string",
+      "maxLength": 30,
+      "minLength": 2
+    },
+    "companyName": {
+      "type": "string",
+      "maxLength": 100,
+      "minLength": 5
+    },
+    "type": {
+      "type": "string",
+      "maxLength": 1,
+      "minLength": 1
+    },
+    "state": {
+      "type": "boolean"
+    },
+    "modifiedDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "customer"
+    }
+  }
+}
